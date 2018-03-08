@@ -1,0 +1,27 @@
+﻿
+<div ng-controller="EmployeeController">
+    <button data-target="#addNewCustomer" data-toggle="modal" class="btn btn-warning  pull-right"><i class="fa fa-plus"></i> Add Employee</button>
+    <div class="table-responsive">
+        <table cellpadding="12" class="table table-bordered table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="emp in employees">
+                <td>{{emp.Name}}</td>
+                <td>{{emp.DepartmentName}}</td>
+                <td>{{emp.Designation}}</td>
+                <td>{{emp.Email}}</td>
+                <td>
+                    <a href="#!/details/{{emp.Id}}" class="btn btn-info btn-md"><i class="fa fa-info-circle"></i></a>
+                    <button class="btn btn-danger btn-md" ng-click="delete(emp, $index)"><i class="glyphicon glyphicon-trash"></i></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-include="'/EmployeeApp/Views/Create.html'"></div>
+</div>

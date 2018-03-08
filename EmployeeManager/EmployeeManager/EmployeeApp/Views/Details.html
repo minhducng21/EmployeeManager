@@ -1,0 +1,20 @@
+﻿<div ng-controller="DetailsController">
+        <h3 ng-hide="a"><b>Name:</b> {{employee.Name}}</h3>
+        <h3 ng-show="a"><b>Name: <input type="text" ng-model="employee.Name"/></b></h3>
+
+        <div ng-hide="a"><b>Department:</b> {{employee.DepartmentName}}</div>
+        <div ng-show="a"><b>Department:</b><input type="text" ng-model="employee.DepartmentName" /></div>
+
+        <div ng-hide="a"><b>Designation:</b> {{employee.Designation}}</div>
+        <div ng-show="a"><b>Designation:</b><input type="text" ng-model="employee.Designation"/></div>
+
+        <div ng-hide="a"><b>Email:</b> {{employee.Email}}</div>
+        <div ng-show="a"><b>Email:</b><input type:text ng-model="employee.Email"/></div>
+        <br />
+        <br />
+    <a ng-hide="a" href="#list" class="btn btn-info btn-default">Back to List</a>
+    <button class="btn btn-default btn-info" ng-show="a" ng-click="update(employee); a=!a">Update</button>
+    <button ng-hide="a" class="btn btn-default btn-sm" ng-click="a=!a">Edit Employee</button>
+    <button ng-show="a" class="btn btn-default btn-sm" ng-click="a=!a">Cancel</button>
+</div>
+
